@@ -13,12 +13,12 @@ function typeWriter() {
   else{
     if(display == true){
         document.querySelector(".slogan").innerHTML = document.querySelector(".slogan").innerHTML.replace("▮", "");
-        setTimeout(typeWriter, 1000);
+        setTimeout(typeWriter, 600);
         display = false;
     }
     else if(display == false){
         document.querySelector(".slogan").innerHTML += "▮";
-        setTimeout(typeWriter, 1000);
+        setTimeout(typeWriter, 600);
         display = true;
     }
   }

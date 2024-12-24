@@ -6,7 +6,7 @@ let z = txt[0].length;
 var speed = 170; /* The speed/duration of the effect in milliseconds */
 let display = true
 let loop = 0;
-let iterationTime = 10,
+let iterationTime = 10;
 
 function typeWriter() {
   switch(loop){
@@ -47,7 +47,6 @@ function write(text, iteration){
     y++;
   }
   if(y == text.length + iteration){
-    display = true;
     loop++;
     x =0;
   }

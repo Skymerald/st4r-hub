@@ -14,6 +14,7 @@ body{
     background-color: rgb(14, 21, 32);
     color : white;
     font-family: "CascadiaCode";
+    user-select: none;
 }
 header{
     display: flex;
@@ -55,7 +56,7 @@ header{
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        gap : 10vh;
+        gap : 5rem;
     }
     .logo{
         margin-top: -10vh;
@@ -66,18 +67,17 @@ header{
         margin: none;
         padding: none;
         font-size: 2.5vw;
-        height: 50vh;
     }
     .text{
         margin-top: 0vh;
-        width: 80vw;
+        width: 100vw;
         align-items: center;
     }
     .name{
         font-size: 10vh;
     }
     .slogan{
-        padding-left: 5vw;
+        padding-left: 2rem;
         font-size: 3vh;
         width: 100%;
     }

@@ -27,25 +27,61 @@ header{
 }
 .logo-text{
     font-family: "CascadiaCode";
-    font-size: 1.5rem;
+    font-size: 1vw;
 }
 .text{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap : 2rem;
-    margin-top: -10rem;
+    gap : 2vw;
+    margin-top: -10vw;
     width: 25vw;
 }
 .name{
-    font-size: 15rem;
+    font-size: 10vw;
 }
 .slogan{
-    font-size: 3rem;
+    font-size: 1.5vw;
     width: 100%;
     height : 5vh;
 }
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    body{
+        overflow: hidden;
+    }
+    header{
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        gap : 10vh;
+    }
+    .logo{
+        margin-top: -10vh;
+        justify-content: center;
+        align-items : center;
+    }
+    .logo-text{
+        margin: none;
+        padding: none;
+        font-size: 2.5vw;
+        height: 50vh;
+    }
+    .text{
+        margin-top: 0vh;
+        width: 80vw;
+        align-items: center;
+    }
+    .name{
+        font-size: 10vh;
+    }
+    .slogan{
+        padding-left: 5vw;
+        font-size: 3vh;
+        width: 100%;
+    }
+  }
 /*
 Font import section
 */

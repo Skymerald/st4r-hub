@@ -1,4 +1,4 @@
-var i = 0;
+let i = 0;
 let y = 0;
 let x = 0;
 var txt = ['Innovation starts here', 'web developpement']; /* The text */
@@ -9,21 +9,23 @@ let loop = 0;
 let iterationTime = 10;
 
 function typeWriter() {
+  //loop for the animation
   switch(loop){
     case 0 :
       write(txt[0], iterationTime);
     break;
     case 1 :
-      deleteText(txt[0], 5);
+      deleteText(txt[0], 6);
     break;
     case 2:
       write(txt[1], iterationTime);
     break;
     case 3:
-      deleteText(txt[1], 5);
+      deleteText(txt[1], 6);
     break;
   }
 }
+//write the corresponding text
 function write(text, iteration){
   if(y < text.length + iteration){
     if (i < text.length) {
@@ -33,16 +35,7 @@ function write(text, iteration){
       i++;
     }
     else{
-      if(display == true){
-          document.querySelector(".slogan").innerHTML = document.querySelector(".slogan").innerHTML.replace("▮", "");
-          setTimeout(typeWriter, 600);
-          display = false;
-      }
-      else if(display == false){
-          document.querySelector(".slogan").innerHTML += "▮";
-          setTimeout(typeWriter, 600);
-          display = true;
-      }
+      blinkCursor();
     }
     y++;
   }
@@ -51,6 +44,7 @@ function write(text, iteration){
     x =0;
   }
 }
+//delete the corresponding text
 function deleteText(text, deleteIteration){
   y = 0;
   i = 0;
@@ -62,16 +56,7 @@ function deleteText(text, deleteIteration){
       z--;
     }
     else{
-      if(display == true){
-        document.querySelector(".slogan").innerHTML = document.querySelector(".slogan").innerHTML.replace("▮", "");
-        setTimeout(typeWriter, 600);
-        display = false;
-      }
-      else if(display == false){
-        document.querySelector(".slogan").innerHTML += "▮";
-        setTimeout(typeWriter, 600);
-        display = true;
-      }
+      blinkCursor();
     }
     x++;
   }
@@ -86,4 +71,18 @@ function deleteText(text, deleteIteration){
     z = txt[0].length;
   }
 }
+//make the cursor blink
+function blinkCursor(){
+  if(display == true){
+    document.querySelector(".slogan").innerHTML = document.querySelector(".slogan").innerHTML.replace("▮", "");
+    setTimeout(typeWriter, 600);
+    display = false;
+  }
+  else if(display == false){
+    document.querySelector(".slogan").innerHTML += "▮";
+    setTimeout(typeWriter, 600);
+    display = true;
+  }
+}
+//load auto the animation
 addEventListener(onload, typeWriter());

@@ -1,88 +1,90 @@
-let i = 0;
-let y = 0;
-let x = 0;
-var txt = ['Innovation starts here', 'web developpement']; /* The text */
-let z = txt[0].length;
-var speed = 170; /* The speed/duration of the effect in milliseconds */
-let display = true
-let loop = 0;
-let iterationTime = 10;
+const target = document.querySelector('.slogan');
+const menuString = "ST4R MENU\n<h3 class='menu-item active'>Home</h3>\n<h3 class='menu-item'>About</h3>\n<h3 class='menu-item'>Contact</h3>\n<h3 class='menu-item'>Projects</h3>\n";
+const menuLink = ["index.html", "about.html", "contact.menu", "projects.html"];
 
-function typeWriter() {
-  //loop for the animation
-  switch(loop){
-    case 0 :
-      write(txt[0], iterationTime);
-    break;
-    case 1 :
-      deleteText(txt[0], 6);
-    break;
-    case 2:
-      write(txt[1], iterationTime);
-    break;
-    case 3:
-      deleteText(txt[1], 6);
-    break;
-  }
-}
-//write the corresponding text
-function write(text, iteration){
-  if(y < text.length + iteration){
-    if (i < text.length) {
-      document.querySelector(".slogan").innerHTML = document.querySelector(".slogan").innerHTML.replace("▮", "");
-      document.querySelector(".slogan").innerHTML += text.charAt(i) + "▮";
-      setTimeout(typeWriter, speed);
-      i++;
+let entered = false;
+
+let typeWriter = new Typewriter(target, {
+    loop:false,
+    cursor: "█",
+})
+typeWriter
+    .typeString("Innovation starts here")
+    .pauseFor(1000)
+    .deleteAll()
+    .pauseFor(1000)
+    .typeString("Web development")
+    .pauseFor(1000)
+    .deleteAll()
+    .pauseFor(1000)
+    .start()
+
+async function showMenu(e){
+    if(e.key ==="Enter" && entered == false){
+        entered = true;
+        typeWriter
+            .deleteAll()
+            .stop()
+
+        // Delete the current text with the typewriter effect
+        await typeMenu();
+
+        let menuItems = await document.querySelectorAll('.menu-item');
+        let index = 0;
+        window.addEventListener("keydown", function(e){
+            if(e.key === "ArrowDown"){
+                if(index < 3){
+                    index++;
+                    setActive(menuItems[index]);
+                    setUnactive(menuItems[index-1]);
+                }
+            } else if (e.key === "ArrowUp"){
+                if(index > 0){
+                    index--;
+                    setActive(menuItems[index]);
+                    setUnactive(menuItems[index+1]);
+                }
+            } else if(e.key === "Enter"){
+                window.location.href = menuLink[index];
+            }
+        });
     }
-    else{
-      blinkCursor();
-    }
-    y++;
-  }
-  if(y == text.length + iteration){
-    loop++;
-    x =0;
-  }
+    
+        
 }
-//delete the corresponding text
-function deleteText(text, deleteIteration){
-  y = 0;
-  i = 0;
-  if(x < text.length + deleteIteration){
-    if (z != 0) {
-      document.querySelector(".slogan").innerHTML = document.querySelector(".slogan").innerHTML.replace(text[z-1]+"▮", "");
-      document.querySelector(".slogan").innerHTML += "▮";
-      setTimeout(typeWriter, speed);
-      z--;
-    }
-    else{
-      blinkCursor();
-    }
-    x++;
-  }
-  if(x == text.length + deleteIteration && loop !=3){
-    display = true;
-    loop++;
-    z = txt[1].length;
-  }
-  else if(x == text.length + deleteIteration && loop ==3){
-    display = true;
-    loop = 0;
-    z = txt[0].length;
-  }
+async function typeMenu() {
+    return new Promise((resolve) => {
+        let menuTypeWriter = new Typewriter(target, {
+            loop: false,
+            cursor: "█"
+        });
+
+        menuTypeWriter
+            .deleteAll()
+            .typeString(menuString)
+            .callFunction(() => {
+                resolve("Menu typed!"); // Resolve the promise when typing is complete
+            })
+            .start();
+    });
 }
-//make the cursor blink
-function blinkCursor(){
-  if(display == true){
-    document.querySelector(".slogan").innerHTML = document.querySelector(".slogan").innerHTML.replace("▮", "");
-    setTimeout(typeWriter, 600);
-    display = false;
-  }
-  else if(display == false){
-    document.querySelector(".slogan").innerHTML += "▮";
-    setTimeout(typeWriter, 600);
-    display = true;
-  }
+function setActive(element){
+    element.classList.add("active");
 }
-//load auto the animation
-addEventListener(onload, typeWriter());
+function setUnactive(element){
+    element.classList.remove("active");
+}
+async function deleteText(target) {
+    let text = target.innerText; // Get the current text
+    while (text.length > 0) {
+        text = text.slice(0, -1); // Remove the last character
+        target.innerText = text + "█"; // Add the cursor back
+        await wait(100); // Wait 100ms before deleting the next character
+    }
+}
+
+function wait(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+window.addEventListener("keypress", showMenu);

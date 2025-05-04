@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "typewriter-effect": "^2.22.0"
+  },
+  "name": "st4r",
+  "version": "1.0.0",
+  "description": "st4r website",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "st4r",
+  "license": "ISC"
+}

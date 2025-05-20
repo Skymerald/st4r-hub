@@ -1,11 +1,11 @@
 const target = document.querySelector('.slogan');
-const menuString = "ST4R MENU\n<h3 class='menu-item active'>Home</h3>\n<h3 class='menu-item'>About</h3>\n<h3 class='menu-item'>Contact</h3>\n<h3 class='menu-item'>Projects</h3>\n";
-const menuLink = ["index.html", "about.html", "contact.menu", "projects.html"];
+let menuString = ["ST4R MENU","<br/>","<h3 class='menu-item active'>Home</h3>","<br/>","<h3 class='menu-item'>About</h3>","<br/>","<h3 class='menu-item'>Contact</h3>","<br/>","<h3 class='menu-item'>Projects</h3>","<br/>", "<h3 class='menu-item'>Credits</h3>", "<br/>"];
+const menuLink = ["index.html", "about.html", "contact.menu", "projects.html", "credits.html"];
 
 let entered = false;
 
 let typeWriter = new Typewriter(target, {
-    loop:false,
+    loop:true,
     cursor: "█",
 })
 typeWriter
@@ -33,7 +33,7 @@ async function showMenu(e){
         let index = 0;
         window.addEventListener("keydown", function(e){
             if(e.key === "ArrowDown"){
-                if(index < 3){
+                if(index < menuLink.length-1){
                     index++;
                     setActive(menuItems[index]);
                     setUnactive(menuItems[index-1]);
@@ -53,15 +53,18 @@ async function showMenu(e){
         
 }
 async function typeMenu() {
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
+        await deleteText(target);
+
         let menuTypeWriter = new Typewriter(target, {
             loop: false,
-            cursor: "█"
+            cursor: "█",
+            delay: 75
         });
 
         menuTypeWriter
             .deleteAll()
-            .typeString(menuString)
+            .typeString(menuString.join(""))
             .callFunction(() => {
                 resolve("Menu typed!"); // Resolve the promise when typing is complete
             })
@@ -75,16 +78,39 @@ function setUnactive(element){
     element.classList.remove("active");
 }
 async function deleteText(target) {
-    let text = target.innerText; // Get the current text
-    while (text.length > 0) {
-        text = text.slice(0, -1); // Remove the last character
-        target.innerText = text + "█"; // Add the cursor back
-        await wait(100); // Wait 100ms before deleting the next character
-    }
+    return new Promise(async (resolve) => {
+        let text = target.innerText; // Get the current text
+        while (text.length > 0) {
+            text = text.slice(0, -1); // Remove the last character
+            target.innerText = text + "█"; // Add the cursor back
+            await wait(60); // Wait 100ms before deleting the next character
+        }
+        resolve();
+    });
+    
 }
-
 function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+function updateMenuIndicator() {
+    const currentURL = window.location.href; // Get the current page URL
 
+    // Loop through the menuLink array to find a match
+    menuLink.forEach((link, index) => {
+        // Check if the current URL includes the link or is the homepage
+        if (currentURL.includes(link) || (link === "index.html" && currentURL.endsWith("/"))) {
+            // Check if the indicator is already present
+            if (!menuString[index * 2 + 2].includes("# here")) {
+                // Add the "actual" indicator to the corresponding menuString
+                menuString[index * 2 + 2] = menuString[index * 2 + 2].replace(
+                    "</h3>",
+                    "</h3><h3 class='comment'># here</h3>"
+                );
+            }
+        }
+    });
+}
+
+// Call the function on page load
+window.addEventListener("DOMContentLoaded", updateMenuIndicator);
 window.addEventListener("keypress", showMenu);

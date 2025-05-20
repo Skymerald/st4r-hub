@@ -56,8 +56,13 @@ header{
     font-size: 3.5vh;
     white-space: pre;
 }
-.comment{
-    color : #999999;
+.comment {
+    display: inline; /* Ensure the comment stays on the same line */
+    color: #999999;
+    font-size: 3vh;
+    font-weight: 300;
+    background-color: transparent; /* Transparent background */
+    margin-left: 0.5rem; /* Add spacing between the text and the comment */
 }
 .menu-item {
     display: inline-block;
@@ -73,6 +78,42 @@ header{
     color: rgb(14, 21, 32);
     padding: 0.8rem;
     margin: 0rem;
+}
+.project-img{
+    height : 25vh;
+}
+.button{
+    display: inline-block;
+    font-size: 2.2vh;
+    font-weight: 600;
+    background: transparent;
+    color: white;
+    outline:none;
+    border:none;
+    margin-top:1.2vw;
+    padding: 0.5rem;
+    margin-left: -0.5rem;
+}
+.button:hover{
+    background: #FFF;
+    color: rgb(14, 21, 32);
+    padding:0.5rem;
+}
+.vr-text{
+    white-space: pre;
+    font-family: monospace;
+    line-height: 2.2vh;
+    margin-left: -8vw;
+    margin-right: 3vw;
+}
+.hr-text::after {
+  content: "##############################################################################################"; /* Character-based line */
+  width:100%;
+  display: block;
+  justify-self:baseline; /* Aligns the characters */
+  font-family: monospace; /* Ensures consistent spacing */
+  margin: 10px 0;
+  margin-left: -2vw;
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */

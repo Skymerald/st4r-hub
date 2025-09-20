@@ -1,3 +1,4 @@
+/*GENERAL SECTION : section that applies to every page */
 :root{
     color-scheme: dark;
 }
@@ -7,17 +8,33 @@
     box-sizing :border-box;
     text-decoration:none;
 }
-html{
-    font-size: 62.5%;
-}
 body{
-    background-color: rgb(14, 21, 32);
+    background-color: rgb(7, 3, 19);
     color : white;
     font-family: "CascadiaCode";
     user-select: none;
     font-size: 1.5vw;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
 }
-header{
+hr{
+    width:98vw;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+p{
+    font-size: 1.5rem;;
+}
+
+/*SPECIFIC SECTION : style that applies to only one page */
+
+/*index.html*/
+.hero-section{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,14 +43,8 @@ header{
 .logo{
     display : flex;
     justify-content: center;
-}
-.logo-text{
-    font-family: "CascadiaCode";
-    font-size: 1vw;
-}
-.logo-img{
-    height : 5vh;
-    width: 4vh;
+    height: 50vh;
+    padding : 0 3rem 0 0;
 }
 .text{
     display: flex;
@@ -64,21 +75,8 @@ header{
     background-color: transparent; /* Transparent background */
     margin-left: 0.5rem; /* Add spacing between the text and the comment */
 }
-.menu-item {
-    display: inline-block;
-    font-size: 2.2vh;
-    font-weight: 600;
-    background: transparent;
-    color: white;
-    margin: 0.8rem;
-}
 
-.menu-item.active {
-    background: #FFF;
-    color: rgb(14, 21, 32);
-    padding: 0.8rem;
-    margin: 0rem;
-}
+/*projects.html*/
 .project-img{
     height : 25vh;
 }
@@ -115,8 +113,69 @@ header{
   margin: 10px 0;
   margin-left: -2vw;
 }
+
+/*about.html*/
+.people-presentation{
+    display:flex;
+    flex-direction: row;
+}
+.text-presentation{
+    margin-left: 2rem;
+
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 2rem;
+}
+.quick-look{
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 2rem;
+
+    padding-left: 3rem;
+
+    align-items: baseline;
+
+    gap: 2rem;
+}
+.people-name{
+    font-size: 3rem;
+}
+.people-photo{
+    width:15vw;
+}
+
+/*credits.html*/
+.projects-credits{
+    display: flex;
+}
+
+/*MENU SECTION : everything related to the menu*/
+.menu-item {
+    display: inline-block;
+    font-size: 2.2vh;
+    font-weight: 600;
+    background: transparent;
+    color: white;
+    margin: 0.8rem;
+}
+.menu-item.active {
+    background: #FFF;
+    color: rgb(14, 21, 32);
+    padding: 0.8rem;
+    margin: 0rem;
+}
+
+/*MEDIA QUERIES : to adapat every screens */
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
+
+    /*index.html*/
     body{
         overflow: hidden;
     }
@@ -130,11 +189,6 @@ header{
         margin-top: -10vh;
         justify-content: center;
         align-items : center;
-    }
-    .logo-text{
-        margin: none;
-        padding: none;
-        font-size: 2.5vw;
     }
     .text{
         margin-top: 0vh;
@@ -150,9 +204,8 @@ header{
         width: 100%;
     }
   }
-/*
-Font import section
-*/
+
+/*FONT SECTION : every font is loaded here */
 @font-face {
     font-family: CascadiaCode;
     src: url(font/cascadia-code/Cascadia.ttf);

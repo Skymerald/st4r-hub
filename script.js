@@ -1,6 +1,6 @@
 const target = document.querySelector('.slogan');
-let menuString = ["ST4R MENU","<br/>","<h3 class='menu-item active'>Home</h3>","<br/>","<h3 class='menu-item'>About</h3>","<br/>","<h3 class='menu-item'>Contact</h3>","<br/>","<h3 class='menu-item'>Projects</h3>","<br/>", "<h3 class='menu-item'>Credits</h3>", "<br/>"];
-const menuLink = ["index.html", "about.html", "contact.menu", "projects.html", "credits.html"];
+let menuString = ["ST4R MENU","<br/>","<h3 class='menu-item active'>Home</h3>","<br/>","<h3 class='menu-item'>About</h3>","<br/>","<h3 class='menu-item'>Contact</h3>","<br/>", "<h3 class='menu-item'>Credits</h3>", "<br/>"];
+const menuLink = ["index.html", "about.html", "contact.html", "credits.html"];
 
 let entered = false;
 
@@ -9,11 +9,15 @@ let typeWriter = new Typewriter(target, {
     cursor: "█",
 })
 typeWriter
-    .typeString("Innovation starts here")
+    .typeString("Innovation onboard")
     .pauseFor(1000)
     .deleteAll()
     .pauseFor(1000)
     .typeString("Web development")
+    .pauseFor(1000)
+    .deleteAll()
+    .pauseFor(1000)
+    .typeString("Professional software")
     .pauseFor(1000)
     .deleteAll()
     .pauseFor(1000)

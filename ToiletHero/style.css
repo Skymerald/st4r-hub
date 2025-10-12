@@ -1,0 +1,372 @@
+:root{
+    font-family: 'Ubuntu';
+
+    --main-color : #144AE1;
+    --font-color : #ffffff;
+}
+
+/*WHOLE PAGE : affect the whole page or all element types*/
+html{
+    scroll-behavior: smooth;
+}
+body{
+    width : 98vw;
+    margin-right: 0;
+}
+section{
+    margin-left: 1vw;
+}
+button{
+    cursor: pointer;
+}
+a{
+    color : var(--main-color);
+    text-decoration: none;
+
+    padding: 0.2rem;
+    border-radius: 10px;
+
+    transition: all 0.3s;
+}
+a::after{
+    content: "";
+    display: flex;
+    position: relative;
+    height: 0.2rem;
+    width: 0;
+    background-color: var(--main-color);
+
+    transition: all 0.2s;
+}
+a:hover::after{
+    width: 100%;
+}
+
+
+/*WHOLE CLASS : affect multiple element from the same class*/
+.subtitle{
+    font-size: 2rem;
+}
+.minor-title{
+    font-size: 1.5rem;
+}
+.text{
+    font-size: 1.3rem;
+}
+.subtext{
+    font-size: 1.2rem;
+}
+.button{
+    width: fit-content;
+
+    background: none;
+
+    border: 0.2rem solid var(--main-color);
+    color: var(--main-color);
+
+    font-size : 1rem;
+
+    padding: 0.8rem; 
+    border-radius: 10px;
+
+    outline: none;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: all 0.5s;
+
+    z-index: 1;
+}
+.button:hover{
+    color: var(--font-color);
+}
+.button::before{
+    content: "";
+    background-color: var(--main-color);
+
+    display: flex;
+    position: absolute;
+
+    left: -2vw;
+    top : -0.3vh;
+
+    border-radius: 25px;
+
+    height: 3rem;
+    width: 0;
+
+    z-index: -1;
+
+    transition: all 0.5s;
+}
+.button:hover::before{
+    width : 15vw
+}
+
+/*SECTION PART : the part for every section and specific thing in section*/
+
+/*HERO SECTION*/
+.hero-section{
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    height : 60vh;
+
+    background-image: url(img/hero_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-title{
+    font-size: 3rem;
+}
+
+/*NAVBAR*/
+.navbar{
+    position: sticky;
+    top : 0px;
+
+    display : grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    margin-left: -1vw;
+    padding : 0.5rem;
+
+    background-color: var(--font-color);
+
+    z-index: 10;
+}
+.logo{
+    width : 12vw;
+}
+.navlinks{
+    display: flex;
+    justify-self: center;
+}
+.menu-button{
+    justify-self: end;
+
+    font-size: 1.5rem;
+
+    background: none;
+    border: none;
+
+    border-radius: 10px;
+
+    transition: all 0.2s;
+}
+.menu-button:hover{
+    color: var(--main-color);
+}
+
+/*OUR STORY*/
+.story-section{
+    background-image: url(img/toilet-background.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding : 1vw;
+    padding-left: 2vw;
+    padding-right : 2vw;
+
+    margin-left: -1vw;
+
+    color: var(--font-color);
+}
+
+/*OUR TECHNOLOGY*/
+.cards-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0.5rem;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--main-color);
+    color: var(--font-color);
+
+    font-size: 2.5rem;
+
+    border-radius: 10px;
+
+    height : 3.2rem;
+    width: 3.2rem;
+}
+.card{
+    display: grid;
+    grid-template-columns: 5vw 1fr;
+    grid-template-rows: 0.5fr 1fr;
+
+    align-items: center;
+
+    grid-template-areas: 
+    "icon title"
+    "icon text";
+}
+.card > .minor-title{
+    margin-bottom: 0.5rem;
+}
+
+/*PRODUCTS*/
+.products-container{
+    position: relative;
+    display: grid;
+
+    grid-template-columns: 5vw auto 5vw;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "origin streamline nexus";
+
+    overflow: hidden;
+
+    margin-left: -1.5vw;
+    margin-right: -0.7vw;
+
+    transition: all 0.5s ease-in-out;
+}
+.products-container::before {
+  content: "";
+  position: absolute;
+  top: 0; /* position at the top */
+  left: 0;
+  width: 100%;
+  height: 100%; /* adjust how tall the fade is */
+  background: linear-gradient(
+    90deg,
+    rgba(216, 216, 216, 0.404),
+    rgba(255, 255, 255, 0), /* strong fade at top */
+    rgba(216, 216, 216, 0.404)   /* transparent towards content */
+  );
+  pointer-events: none; /* so it doesn’t block clicks */
+  z-index: 2; /* sits above carousel items */
+}
+.product{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.product-title{
+    font-size: 2rem;
+    font-weight: 300;
+
+    text-align: center;
+}
+.product-image{
+    height: 50vh;
+}
+.product-description{
+    font-size: 1.2rem;
+    width: 30vw;
+}
+.product-characteristics{
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    font-weight: 600;
+
+    list-style: none;
+
+    width: 30vw;
+}
+.product-price{
+    text-align: center;
+    font-size: 1.5rem;
+    width: 10vw;
+}
+/*CONTROLS*/
+.controls{
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    gap: 80vw;
+
+    z-index: 3;
+}
+.control-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+
+    color: var(--main-color);
+    border: 0.3rem solid var(--main-color);
+
+    border-radius: 100%;
+
+    height: 3rem;
+    width: 3rem;
+
+    transition: all 0.3s;
+}
+.control-button:hover{
+    color: var(--font-color);
+    background-color: var(--main-color);
+
+    cursor: pointer;
+}
+
+/*CONTACT SECTION*/
+.contact-div{
+    display : flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1vw;
+}
+.contact-input{
+    font-size: 1.5rem;
+    height : 2.5rem;
+
+    border: 0.1rem solid #919191;
+    border-radius: 10px;
+
+    outline: none;
+
+    transition: all 0.3s;
+}
+.contact-input:focus{
+    border: 0.2rem solid var(--main-color);
+}
+
+/*FOOTER*/
+footer{
+    margin-top: 5rem;
+
+    background: #ffffff;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(189, 189, 189, 1) 100%);
+
+    margin-left: -1.5vw;
+    margin-right: -0.7vw;
+    margin-bottom: -2vh;
+
+    padding-left: 2vw;
+
+    display: grid;
+    grid-template-columns: auto 2fr;
+
+    align-items: center;
+}
+.copyright{
+    justify-self: center;
+    text-justify: center;
+    text-align: center;
+}

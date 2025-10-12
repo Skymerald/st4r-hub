@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a1bb3c16d0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" href="img/logo/icon_logo_transparent.png">
+    <title>ToiletHero</title>
+</head>
+<body>
+    <header class="navbar">
+        <img src="img/logo/full_logo_transparent.png" class="logo" alt="ToiletHero logo" />
+        <nav class="navlinks">
+            <a href="#information">Information</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="menu-button">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+    <main class="hero-section">
+        <h1 class="main-title">Elevate your toilet experience.</h1>
+        <h2 class="secondary-title">
+            ToiletHero is one of the best company in the industry. <br />
+            We introduce our latest technology and design for an always better experience, comfort and efficiency.
+        </h2>
+        <button class="button">See our products</button>
+    </main>
+    <section class="story-section" id="information">
+        <h3 class="subtitle">Our Story</h3>
+        <p class="text">
+            ToiletHero is a company that was founded in 1998 in the objective to blend technology with the toilet world.<br/>
+            Our mission is to make toilet accessible to anyone with the best technology available.<br/>
+            We iterated on old technology to be able to offer the best possible comfort for the best price possible.
+        </p>
+    </section>
+    <section class="technology-section">
+        <h3 class="subtitle">Our technology</h3>
+        <div class="cards-container">
+            <div class="card">
+                <i class="fa-solid fa-award icons" style="grid-area: icon;"></i>
+                <h4 class="minor-title" style="grid-area: title;">Lifetime warranty</h4>
+                <p class="subtext" style="grid-area: text;">We offer a lifetime warranty for all of our products to let you always be able to repair instead of replace.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-toilet icons" style="grid-area: icon;"></i>
+                <h4 class="minor-title" style="grid-area: title;">SmartFlush™ technology</h4>
+                <p class="subtext" style="grid-area: text;">We designed a new technology called SmartFlush™ to allow for an automatic adjust of water flow depending on the waste, while reducing the needed water by 40% compared to others toilets.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-soap icons" style="grid-area: icon;"></i>
+                <h4 class="minor-title" style="grid-area: title;">NanoShield coating</h4>
+                <p class="subtext" style="grid-area: text;">With research we were able to put nanoparticule into our products to make a self cleaning and anti-bacterial surfaces to prevent stains and buildup. 
+                    In partneurship with Swirl&Shine.
+                </p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-mobile icons" style="grid-area: icon;"></i>
+                <h4 class="minor-title" style="grid-area: title;">HeroConnect app</h4>
+                <p class="subtext" style="grid-area: text;">
+                    Thanks to our design and tight integration with smart technologies we made an mobile application letting you in controls of your toilet at each moment. 
+                    You can get maintenance alerts, get statistics to improve toilet use, or even see the remains of toilet paper.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="products-section" id="products">
+        <h3 class="subtitle">Products</h3>
+        <div class="products-container">
+            <div class="product" style="grid-area: origin;">
+                <h4 class="product-title">Origin</h4>
+                <img src="img/products/origin.png" class="product-image">
+                <p class="product-description">The classic and timeless toilet in two-piece. It has this simple and proven design, that work everwhere and last.
+                    We still made it a little fresh up.
+                </p>
+                <ul class="product-characteristics">
+                    <li>Efficient dual-flush system</li>
+                    <li>Ceramic build making for long-lasting quality</li>
+                    <li>Easy-clean surface for simple maintenance</li>
+                </ul>
+                <h5 class="product-price">249€</h5>
+                <button class="button">Buy</button>
+            </div>
+            <div class="product" style="grid-area: streamline;">
+                <h4 class="product-title">Streamline</h4>
+                <img src="img/products/streamline.png" class="product-image">
+                <p class="product-description">A modern and sleek one-piece design. The cutting edge effiency, innovation while keeping this well known and elegant design.
+                </p>
+                <ul class="product-characteristics">
+                    <li>SmartFlush™ technology, adjust water use to optimise it</li>
+                    <li>NanoShield coating, the anti-bacterial and self cleaning coating to allow simple cleaning</li>
+                    <li>Soft close lid, quiet, comfortable, everything to get the best experience</li>
+                </ul>
+                <h5 class="product-price">599€</h5>
+                <button class="button">Buy</button>
+            </div>
+            <div class="product" style="grid-area: nexus;">
+                <h4 class="product-title">Nexus</h4>
+                <img src="img/products/nexus.png" class="product-image">
+                <p class="product-description">The latest toilet with state of the art technology integration. With its connectivity and technology while keeping a comfortable design, it will take central place in your bathroom.
+                </p>
+                <ul class="product-characteristics">
+                    <li>HeroConnect application integration, tailor the toilet to your need, and get data to improve its usage</li>
+                    <li>Custom comfort, with the HeroConnect application modify the settings for every member of the family</li>
+                    <li>Advanced sensors, get leak detection, auto flushing, and eco modes while still getting best possible experience</li>
+                </ul>
+                <h5 class="product-price">1 499€</h5>
+                <button class="button">Buy</button>
+            </div>
+            <div class="controls">
+                <i class="fa-solid fa-chevron-left control-button" id="left-button"></i>
+                <i class="fa-solid fa-chevron-right control-button" id="right-button"></i>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <h3 class="subtitle">Contact</h3>
+        <p class="text">If you have special request, you can notify us, and we will reply to you in the best delay.</p>
+        <div class="contact-div">
+            <input type="email" class="contact-input" placeholder="example@email.com">
+            <button class="button">Send</button>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-links">
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Cookie policy</a>
+        </div>
+        <h2 class="secondary-title copyright">©ToiletHero</h2>
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Arthur Terrillon-Sauvageot">
+    <meta name="description" content="A mini course for UI and UX begginers with code snippet in HTML
+    CSS and JavaScript, made around the fictional toilet company ToiletHero. Published on St4r.fr a blog written by Arthur Terrillon-Sauvageot.">
+    <meta name="keywords" content="UI, UX, St4r, Blog, ToiletHero, course, HTML CSS, JavaScript, Arthur Terrillon-Sauvageot">
+
+    <!--
+    Importing zone:
+        Higlight.js
+    -->
+    <link rel="stylesheet" href="../library/highlight_js/styles/ir-black.css">
+    <script src="../library/highlight_js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/a1bb3c16d0.js" crossorigin="anonymous"></script>
+
+    <!-- Style.css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Title -->
+    <title>Mini UI/UX, and Web Development course with ToiletHero</title>
+
+    <!-- Icon -->
+    <link rel="icon" href="../../img/logo/LogoSt4rwhite.svg">
+</head>
+<body>
+    <header style="background-image: url(img/post1/background.png);">
+        <h1 class="post-title">Mini UI/UX, and Web Development course with ToiletHero</h1>
+        <div class="published-date"><i class="fa-regular fa-calendar"></i><p>20/10/2025</p></div>
+        <div class="read-time"><i class="fa-regular fa-clock"></i><p>13min</p></div>
+    </header>
+    
+    <main>
+        <h2>Introduction</h2>
+
+        <p>
+        Hello, and welcome to this first blog post ! <br>
+        Today we will talk about how to make a simple and clean UI/UX design for a website of a fictional toilet company.<br>
+        It is beginner friendly and you will find code snippet for each element but I assume you have some knowledge of HTML and CSS.<br>
+        Most of the code snippet are the code I used for the website, to save some time and to let you see how I do it.<br>
+        You can find the youtube video that I made on this link :<br>
+        </p>
+
+        <h2>Sketching the website</h2>
+
+        <p>
+        So first let make the toilet company branding, I asked copilot for some names ideas and logo and it gave me a name <strong>ToiletHero</strong> and this logo :<br>
+        </p>
+        <img src="img/post1/logo.png" style="width: 50%;"/><br/>
+        <p>
+        I am sorry if you cannot read the name because it is black text on black background but the logo is enough to get the idea.<br/>
+        After we need to make the sketch of the website. We’ll adopt a simple and well used format, because a good UI is to make the usage of the website simple and intuitive, and this how you make a good UX. Like that any user coming to the website is going to know how to use it, and for retention span it is really important.<br/>
+        So I sketch this simple design : <br/>
+        </p>
+        <img src="img/post1/website_schematic.png" style="width: 50%;"/><br/>
+        <p>
+        We’ll have the header with logo, navigation and menu button, the hero section (this is how it is called) with a title, a subtitle, and a call to action (the action you want your user  to do, like sign up), and often there is also an image on the side or in the background.<br>
+        Then pretty specific about the toilet company but it can be applied to any company, the story section, to tell a little bit about the company, what it does. Then we’ll make a section about technology specific to the company but it can be use for presenting a team or anything else.<br>
+        After of course we’ll make the section to present the products and after that a contact section and finally the footer where we’ll find the copyright and some links, like for the cookie policy.<br>
+        </p>
+
+        <h2>Coding</h2>
+
+        <h3>1. HTML</h3>
+        <h4>Hero Section</h4>
+
+        <p>
+        Whooo, now that I explain that, we can go right into coding, first I will make the hero section, pretty simple, I have this code :
+        </p>
+        <pre><code>
+            &lt;main class="hero-section"&gt; &lt;!-- The section element let you define different part of HTML --&gt;
+                &lt;h1 class="main-title"&gt;Elevate your toilet experience.&lt;/h1&gt; &lt;!-- This is the title --&gt;
+                &lt;h2 class="secondary-title"&gt;
+                    ToiletHero is one of the best company in the industry. &lt;br /&gt;
+                    We introduce our latest technology and design for an always better experience, comfort and efficiency.
+                &lt;/h2&gt; &lt;!-- And this is the subtitle --&gt;
+                &lt;button class="button"&gt;See our products&lt;/button&gt; &lt;!-- Finally a button --&gt;
+            &lt;/main&gt;
+        </code></pre>
+        <p>
+        If you wonder why I use main, it is because I want this to be accounted as the main part of the website, so the search engine use it for affining the search results. For the rest we have the title, the subtitle and a call to action, here to see the products. We'll tackle the CSS later.
+        </p>
+
+        <h4>Story Section</h4>
+        
+        <p>
+        Now I made the story section with this code : 
+        </p>
+        <pre class="html"><code>
+            &lt;section class="story-section" id="information"&gt;
+                &lt;h3 class="subtitle"&gt;Our Story&lt;/h3&gt;
+                &lt;p class="text"&gt;
+                    ToiletHero is a company that was founded in 1998 in the objective to blend technology with the toilet world.&lt;br/&gt;
+                    Our mission is to make toilet accessible to anyone with the best technology available.&lt;br/&gt;
+                    We iterated on old technology to be able to offer the best possible comfort for the best price possible.
+                &lt;/p&gt;
+            &lt;/section&gt;
+        </code></pre>
+        <p>
+        So here nothing crazy, a title and little text I invented.<br>
+        </p>
+
+        <h4>Header</h4>
+
+        <p>
+        And after remembering that one of the most important thing is the header, because with the hero section it is going to be one of the first thing a user see, here is my code for it : 
+        </p>
+
+        <pre><code>
+            &lt;header class="navbar"&gt; &lt;!-- Header is to define the head of the page --&gt;
+                &lt;img src="img/logo/full_logo_transparent.png" class="logo" alt="ToiletHero logo" /&gt;
+                &lt;nav class="navlinks"&gt; &lt;!-- Nav is for the navigation ON the page --&gt;
+                    &lt;a href="#information"&gt;Information&lt;/a&gt;
+                    &lt;a href="#products"&gt;Products&lt;/a&gt;
+                    &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+                &lt;/nav&gt;
+                &lt;button class="menu-button"&gt;
+                    &lt;i class="fa-solid fa-bars"&gt;&lt;/i&gt; &lt;!-- Font-awesome icon --&gt;
+                &lt;/button&gt;
+            &lt;/header&gt;
+        </code></pre>
+
+        <p>
+        Here we have the logo image, a little navigation composed of links and a menu button.<br/>
+        What is interesting here is the use of font awesome library, you can add it with the kit system or download it. You will find it at that link : <a href="https://fontawesome.com/start">fontawesome.com/start</a>
+        And after it is just a matter of searching on the website the icon you want and the copy and pasting the provided code. Here I use it only for the classic 3 bars menu button. <br/>
+        </p>
+
+        <h4>Technology Section</h4>
+        
+        <p>
+        Then we will make the technology section with this code :
+        </p>
+        <pre><code>
+            &lt;section class="technology-section"&gt;
+                &lt;h3 class="subtitle"&gt;Our technology&lt;/h3&gt;
+                &lt;div class="cards-container"&gt; &lt;!-- The container should have 4 cards --&gt;
+                    &lt;div class="card"&gt; &lt;!-- This is the layout used for every card --&gt;
+                        &lt;i class="fa-solid fa-award icons" style="grid-area: icon;"&gt;&lt;/i&gt; &lt;!-- Here is the icon --&gt;
+                        &lt;h4 class="minor-title" style="grid-area: title;"&gt;Lifetime warranty&lt;/h4&gt; &lt;!-- Then the title--&gt;
+                        &lt;p class="subtext" style="grid-area: text;"&gt; Some text ... &lt;/p&gt; &lt;!-- And finally the text --&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        </code></pre>
+        <p>
+        You can see I removed the text and I kept only the first card (this is how it is called), but it nonetheless interesting.<br/>
+        We start by the section, with the title of it, the cards container to put every card (in my case 4), the card div, with : the icon first, the name of the technology and a quick description (here I removed it). <br/>
+        Now let’s take a look at the current website :
+        </p>
+        <img src="img/post1/current_website.png" style="width: 50%;"/><br/>
+        <p>Sorry, for the white background 😉</p>
+
+        <h3>2. CSS</h3>
+
+        <p>
+        Yes it is pretty ugly, so now let’s add CSS ! We’ll start by doing this so we’ll have everything needed for the next sections. <br/>
+        </p>
+
+        <h4>Root and body element</h4>
+        
+        <p>
+        Before everything we need to setup some basics, the body styling and the colors variables :
+        </p>
+        <pre><code>
+            :root{
+                font-family: 'Ubuntu'; /*The font variable*/
+
+                --main-color : #144AE1;
+                --font-color : #ffffff;
+
+                /*And the colors variables*/
+            }
+            body{
+                width : 98vw;
+                margin-right: 0;
+
+                /*Make the page large enough but without a vertical scroll bar*/
+            }
+        </code></pre>
+        <p>
+        The <caption>:root</caption> element is one element that is going to be applied for every element on the page and this is typically where we declare variables.<br/>
+        </p>
+
+        <h4>Variables in CSS ?!</h4>
+        
+        <p>
+        Yes variables in CSS. They can be declared like this :
+        </p>
+        <pre><code>
+            --color : #000; /*A color*/
+            --margin : 95px; /*A value, in every unit available*/
+            --font : ‘Roboto’;/*A font*/
+            /*It can be used for every values possible*/
+        </code></pre>
+        <p>
+        And it can be used like this :
+        </p>
+        <pre><code>
+            body{
+                Background-color : var(--color);
+            }
+        </code></pre>
+        <p>
+        And then the body element is the full page, so every element are going to be affected by the styling applied in the body element, but it can be overridden by any other styling. Here I just make the body element the size of the viewport (the place where is rendered the website). <br/>
+        </p>
+
+        <h4>Header</h4>
+        
+        <p>
+        Now let’s make the header. We want the logo to the right, the links in the middle and finally, the menu button on the left, it is a good, simple and well used style so it is perfect.<br/>
+        For this we will need this CSS :
+        </p>
+        <pre><code>
+            .navbar{
+                display : grid; /*Set up a grid container, with 2 axis support instead of 1 for flexbox*/
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+            }
+        </code></pre>
+
+        <p>
+        Here we put the navbar into the grid type of container with a separation of 1 fraction (arbitrary unit to represent a fraction of the container), auto (to make it as big as possible), and 1fr again.<br/>
+        But for now it is not scrolling with us, the first thing coming in your mind might be to use :
+        </p>
+        <pre><code>position : fixed;</code></pre>
+        <p>But in fact we’ll use :</p>
+        <pre><code>position : sticky;</code></pre>
+        <p>
+        Like that the navbar won’t be always on top of element, on the very top of the page, it will be considered like a normal element, so it get it own space, and then when scrolling and hitting the top of the page, it will become fixed, we can see it like the navigation of Wikipedia.<br/></p>
+        <img src="img/post1/wikipedia_navigation.gif" style="width: 50%;"/>
+        <p>
+        Again, sorry for the white background.<br/>
+        Now for the logo, the links and the menu button we’ll use this : 
+        </p>
+        <pre><code>
+            .logo{
+                width : 12vw; /*Give its size*/
+            }
+            .navlinks{
+                display: flex;
+                justify-self: center; /* Put the links in the center */
+            }
+            .menu-button{
+                justify-self: end;
+
+                font-size: 1.5rem;
+
+                background: none;
+                border: none;
+
+                border-radius: 10px;
+
+                transition: all 0.2s;
+            }
+            .menu-button:hover{
+                color: var(--main-color);
+            }
+        </code></pre>
+        <p>
+        It is pretty simple, we set the size of the logo, the place of the links, and for the button the only thing we do is make it prettier with the smooth color transition when hovered, thanks to the transition propriety.<br/>
+        </p>
+
+        <h4>Hero Section</h4>
+        
+        <p>
+        After this we can now make the Hero section, what we want is a main title, a subtitle and a button, all above a background image.<br/>
+        To do so, we can use this CSS :
+        </p>
+        <pre><code>
+            .hero-section{
+                display: flex;
+                flex-direction: column;
+
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+                /* Put the item in the center*/
+
+                height : 60vh; /* Give a size to the container */
+
+                background-image: url(img/hero_background.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                /* Add a background image and make it adapt with the screen size */
+            }
+            .main-title{
+                font-size: 3rem;
+            }
+        </code></pre>
+        <p>
+        As we can see, it only put the item in the center, set the height of the section, and put the background image. If you are wondering about the button, I will not cover it.<br/>
+        </p>
+
+        <h4>Technology Section</h4>
+        
+        <p>
+        Now I will pass on the story section, because it is something that we already covered and we’ll go directly to the technology section.<br/>
+        With it, we will see is the grid structure, otherwise we already seen everything
+        </p>
+        <pre><code>
+            .cards-container{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                gap: 0.5rem;
+            }
+            .card{
+                display: grid;
+                grid-template-columns: 5vw 1fr;
+                grid-template-rows: 0.5fr 1fr;
+
+                align-items: center;
+
+                grid-template-areas: 
+                "icon title"
+                "icon text";
+            }
+            .card > .minor-title{
+                margin-bottom: 0.5rem;
+            }
+        </code></pre>
+        <p>
+        So here what is happening, is that I use 2 grid inside each other. The first one is the one for making the card on 2 columns. On the other hand the second one is more interesting due to the layout. <br/>
+        I first declare 2 columns and 2 rows, with a size for each, and then use the grid-template-areas, to set what content is going to be where. You may have seen the <caption>style=”grid-area: something;”</caption> in the HTML earlier, well it is to give a name to the element to declare what rows and what columns they will occupy in the grid.<br/>
+        Lastly the most interesting thing is the <caption>.card > .minor-title</caption>, this is only a selector, to tell the browser, that this style only applies to the <caption>.minor-title</caption> that are inside a <caption>.card</caption>.<br/>
+        </p>
+
+        <h4>Products Section</h4>
+        
+        <p>
+        Now we will tackle the most interesting part, the products section, I will pass onto the HTML, that only declares the products with an image, a name, a description and some characteristics. And I will also pass on the CSS, that only style the image, name, etc …
+        What is interesting is this :
+        </p>
+        <pre><code>
+            .products-container{
+                display: grid;
+
+                grid-template-columns: 5vw auto 5vw;
+                grid-template-rows: 1fr;
+                grid-template-areas: 
+                "origin streamline nexus";
+
+            }
+        </code></pre>
+        <p>
+        To place the 3 elements, while ensuring the central one takes the most place.
+        I don’t show the CSS to make the elements a certain width, to get the text to go out of the page.
+        </p>
+
+        <h3>3. JavaScript</h3>
+
+        <p>
+        Now, the most interesting part, javascript ! Here it is :
+        </p>
+        <pre><code>
+            const leftBtn = document.querySelector('#left-button');
+            const rightBtn = document.querySelector('#right-button');
+
+            let productsContainer = document.querySelector('.products-container');
+            console.log(productsContainer);
+
+            let products = ["origin", "streamline", "nexus"];
+
+            leftBtn.addEventListener('click', function(e){
+                products.unshift(products[2]);
+                products.pop();
+
+                productsContainer.style.gridTemplateAreas = `"${products[0]} ${products[1]} ${products[2]}"`;
+            });
+            rightBtn.addEventListener('click', function(e){
+                let shift = products.shift();
+                products[2] = shift;
+
+                productsContainer.style.gridTemplateAreas = `"${products[0]} ${products[1]} ${products[2]}"`;
+            });
+        </code></pre>
+        <p>
+        We have 20 lines of pretty complicated code, but I will explain.<br/>
+        First, we select the two button of controls (I didn’t mention them earlier, you can make them yourself at this point) and the products container.<br/>
+        After we declare a list of the name of the grid-area for each products. 
+        Before looking at the code for the left button let’s see the right button. First we add an eventListener(a function triggered each time an event happens on the element) for the event of a click. Then we use the shift function on the list, it removes the first element of the list, we store it in a variable and add it back to the end of the list.<br/>
+        And after we only modify the grid-template-areas propriety of the products-container elements with our list.<br/>
+        For the left button, it is the same, we only use the unshift function, that only add the element you want at the beginning of the list, here the last element, and then we remove the last element, since it need to be the first. And after we use the same code.<br/>
+        And voilà ! We have a functioning carousel, but if you want smooth transitions, it is more complicated, and I think it can be a great exercise.<br/>
+        </p>
+
+        <h3>4. Final coding</h3>
+        
+        <p>
+        And I will pass on the last two section that are really simple to do, the last code snippet I will give is to make the hover effect on links (&lt;a&gt; elements), with this code :
+        </p>
+        <pre><code>
+            a::after{
+                content: "";
+                display: flex;
+                position: relative;
+                height: 0.2rem;
+                width: 0;
+                background-color: var(--main-color);
+
+                transition: all 0.2s;
+            }
+            a:hover::after{
+                width: 100%;
+            }
+        </code></pre>
+        <p>
+        And the fade effect for the carousel, with this code :
+        </p>
+        <pre><code>
+            .products-container::before {
+            content: "";
+            position: absolute;
+            top: 0; /* position at the top */
+            left: 0;
+            width: 100%;
+            height: 100%; /* adjust how tall the fade is */
+            background: linear-gradient(
+                90deg,
+                rgba(216, 216, 216, 0.404),
+                rgba(255, 255, 255, 0), /* strong fade at top */
+                rgba(216, 216, 216, 0.404)   /* transparent towards content */
+            );
+            pointer-events: none; /* so it doesn’t block clicks */
+            z-index: 2; /* sits above carousel items */
+            }
+        </code></pre>
+        <p>
+        And be sure to use it on the container.<br/>
+        And that’s it !<br/>
+        </p>
+
+        <h2>Outroduction</h2>
+
+        <p>
+        Thanks if you read this, I am really thankful, it was my first blog post and I hope you like it, you can still check out the final website here : <a href="https://st4r.fr/ToiletHero">st4r.fr/ToiletHero</a>, or check out my video about it.<br/>
+        If you want to give me feedback you can do it by sending an email at the address you’ll find here : <a href="https://st4r.fr/contact">st4r.fr/contact</a><br/>
+        I took some time to make this article and the video, if you find them interesting it is really cool for me, and I hope you will help me improve this.<br/>
+        Again big thanks, and I hope you will read the next article, I will try to make it next month.<br/>
+        I will also try to make a newsletter, but it is not insured.<br/>
+        Again big thanks, and see you next month ! <br/>
+        </p>
+    </main>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

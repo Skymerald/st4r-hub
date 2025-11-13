@@ -1,6 +1,6 @@
 const target = document.querySelector('.slogan');
-let menuString = ["ST4R MENU","<br/>","<h3 class='menu-item active'>Home</h3>","<br/>","<h3 class='menu-item'>About</h3>","<br/>","<h3 class='menu-item'>Contact</h3>","<br/>", "<h3 class='menu-item'>Credits</h3>", "<br/>"];
-const menuLink = ["index.html", "about.html", "contact.html", "credits.html"];
+let menuString = ["ST4R MENU","<br/>","<h3 class='menu-item active'>Home</h3>","<br/>", "<h3 class='menu-item'>Blog</h3>", "<br/>", "<h3 class='menu-item'>About</h3>","<br/>","<h3 class='menu-item'>Contact</h3>","<br/>", "<h3 class='menu-item'>Credits</h3>", "<br/>"];
+const menuLink = ["index.html", "blog/blog.html", "about.html", "contact.html", "credits.html"];
 
 let entered = false;
 

@@ -13,7 +13,6 @@ body{
     height: 100vh;
 }
 .blog-container{
-    height: 50vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

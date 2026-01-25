@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Arthur Terrillon-Sauvageot">
+    <meta name="description" content="A mini course for UI and UX begginers with code snippet in HTML
+    CSS and JavaScript, made around the fictional toilet company ToiletHero. Published on St4r.fr a blog written by Arthur Terrillon-Sauvageot.">
+    <meta name="keywords" content="UI, UX, St4r, Blog, ToiletHero, course, HTML CSS, JavaScript, Arthur Terrillon-Sauvageot">
+
+    <!--
+    Importing zone:
+        Higlight.js
+    -->
+    <link rel="stylesheet" href="../library/highlight_js/styles/ir-black.css">
+    <script src="../library/highlight_js/highlight.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/a1bb3c16d0.js" crossorigin="anonymous"></script>
+
+    <!-- Style.css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Title -->
+    <title>Mini UI/UX, and Web Development course with ToiletHero</title>
+
+    <!-- Icon -->
+    <link rel="icon" href="../../img/logo/LogoSt4rwhite.svg">
+</head>
+<body>
+    <header>
+        <h1 class="post-title">Petite introduction à la création de page web</h1>
+        <div class="published-date"><i class="fa-regular fa-calendar"></i><p>25/01/2026</p></div>
+        <div class="read-time"><i class="fa-regular fa-clock"></i><p>22min</p></div>
+    </header>
+    <main>
+        <h2>Introduction</h2>
+        <p>
+        Bonjour, aujourd'hui je vais vous guider à travers un petit voyage sur comment créer sa propre page web.<br/>
+        Première chose à savoir, chaque page web est constitué de 3 languages : <br/>
+        </p>
+        <h3>HTML</h3><br/>
+        <p>Le HTML est ce qui structure la page, tout le contenu d'une page web est contenu dans un fichier HTML.</p><br/>
+        <h3>CSS</h3><br/>
+        <p>Le CSS est le langage qui stylise chaque élement de la page HTML.</p><br/>
+        <h3>JavaScript</h3>
+        <p>Le JavaScript est le seul langage de programmation des pages web. Il permet d'ajouter des fonctionnalités interactives à une page web.</p>
+        <h2>Les base du HTML</h2>
+        <p>Le HTML est un language utilisant des paires de balises, par exemple : </p><br/>
+        <pre><code>
+            &lt;html&gt;&lt;/html&gt;
+            &lt;h1&gt;&lt;/h1&gt;
+        </code></pre>
+        <p>toute page possède les même base : </p><br>
+        <pre><code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;meta charset="UTF-8"&gt;
+                &lt;title&gt;Document&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code></pre>
+        <p>
+            Ces balises sont importantes : la première permet d'indiquer que le fichier est un fichier html (elle est optionel). <br>
+            La deuxième définit le début du fichier html, tout page doit finir par la balise fermante html (avec un "/"). <br>
+            Ensuite il y a la balise head permettant de donner des informations sur la page. <br>
+            Puis une balise permettant d'utiliser les accents dan la page. <br>
+            La balise title permet de définir un titre pour la page (le nom indiqué sur l'onglet) <br>
+            Finalement la balise body permet de définir l'espace où se situera le contenu de la page. <br>
+            ⚠️Une page HTML contient un seul body et un seul head⚠️
+        </p>
+        <h2>Première balise pour créer une page</h2>
+        <p>Les premières balise à connaitre sont celle de textes :</p><br>
+        <h4>Les titres</h4>
+        <p>
+            Les titres sont faciles à mettre en place : les titres se définissent avec une balise commençant par h puis un chiffre de 1 à 6. <br>
+            Les titres 1 sont les plus important et 6 sont les moins important. <br>
+            ⚠️Rappelez-vous que le HTML permet seulement de définir le contenu, il ne faut pas utiliser un titre pour sa taille mais pour son importance, la taille peut être défini en CSS⚠️
+        </p>
+        <h4>Les paragraphes</h4>
+        <p>
+            Les paragraphes se font avec une balise p.
+        </p>
+        <h4>Les liens</h4>
+        <p>
+            ⚠️Les liens nécessitent des options <strong>À L'INTERIEUR</strong> de la première balise (entre "&lt;" et "&gt;") pour pouvoir fonctionner⚠️
+            Pour faire un lien il faut utiliser la balise a avec l'option href avec un lien en valeur et le texte à afficher entre les deux balise. <br>
+            Exemple : <br>
+            <pre><code>
+                &lt;a href="https://google.com"&gt;Un lien&lt;/a&gt;
+            </code></pre>
+            Ce code va afficher "Un lien" et va renvoyer vers "google.com" (toujours ajouter "http://" ou "https://" pour que le lien fonctionne). <br>
+            Vous pouvez aussi ouvrir le lien dans un nouvel onglet en utilisant l'option target avec la valeur _blank :
+            <pre><code>
+                &lt;a href="https://google.com" target="_blank"&gt;Un lien&lt;/a&gt;
+            </code></pre>
+        </p>
+        <a>Maintenant que vous savez utiliser des balises de bases vous voudrez surement ajouter différentes choses à votre page.</a>
+        <h4>Les images</h4>
+        <p>
+            ⚠️Les images sont légerement différentes du restes des balises : elles n'ont pas de balise fermantes(la deuxième).⚠️<br>
+            De plus les images nécessitent deux options tout comme les liens : le premier est src qui permet de donner le chemin de l'image et alt. <br>
+            ⚠️Le chemin doit être relatif à votre fichier HTML ; exemple mon image s'appele chat.png et se trouve dans le dossier image, le chemin sera "image/chat.png", les chemins ne peuvent pas contenir d'espace⚠️ <br>
+            L'option alt est nécessaire pour donner une description de l'image, elle s'affiche quand l'image ne se charge pas, elle est lue par les logiciels pour personne malvoyante, et permet d'afficher une infobulle lorsque la souris passe au dessus. <br>
+            Exemple : 
+            <pre><code>
+                &lt;img src="image/chat.png" alt="une image de chat" /&gt;
+            </code></pre>
+        </p>
+        <h4>Les boutons</h4>
+        <p>
+            Les boutons ne sont pas réellement utiles pour une page web basiques, mais c'est intéressant de savoir comment le faire. <br>
+            La balise pour le bouton est la balise button avec entre les deux balise le texte affiché (comme un lien sans href).
+            Exemple :
+            <pre><code>
+                &lt;button&gt;Un bouton&lt;/button&gt;
+            </code></pre>
+            Ce code va simplement afficher un bouton avec inscrit "Un bouton".
+        </p>
+        <h4>Les conteneurs</h4>
+        <p>
+            Les conteneurs sont très important, ils permettent de contenir d'autres contenus à l'interieur. <br>
+            Le plus basique est div qui permet de faire un conteneur classique. <br>
+            ⚠️Un conteneur permet de contenir d'autres éléments comme body mais cela n'est pas forcément visible, encore une fois le HTML structure simplement la page⚠️
+            Les différents conteneurs sont div (le basique), main permettant de mettre le contenu principal, section pour faire des section, nav pour la navigation, et header pour le haut de la page avec le footer pour le bas de page. <br>
+            Concretement un page peut s'organiser de tel manière : <br>
+            <pre><code>
+                &lt;body&gt;
+                    &lt;header&gt;
+                        &lt;!-- Élements du haut de page --&gt;
+                    &lt;/header&gt;
+                    &lt;main&gt;
+                        &lt;nav&gt;
+                            &lt;!-- Élements de la navigation --&gt;
+                        &lt;/nav&gt;
+                        &lt;section&gt;
+                            &lt;!-- Première section --&gt;
+                        &lt;/section&gt;
+                        &lt;section&gt;
+                            &lt;!-- Deuxième section --&gt;
+                        &lt;/section&gt;
+                    &lt;/main&gt;
+                    &lt;footer&gt;
+                        &lt;!-- Élement du bas de page --&gt;
+                    &lt;/footer&gt;
+                &lt;/body&gt;
+            </code></pre>
+        </p>
+        <h4>Les commentaires</h4>
+        <p>
+            Les commentaires ne sont pas nécessaire et ne vont pas être affiché mais sont important pour pouvoir donner des informations à ses collaborateurs ou à son soi du futur. <br>
+            Pour le faire il faut : <br>
+            <pre><code>
+                &lt;!-- Un commentaire --&gt;
+            </code></pre>
+            <br> <br>
+            Et voici la fin du HTML
+        </p>
+        <h2>Le CSS</h2>
+        <p>
+            Le CSS permet de styliser une page HTML en appliquant différent style. <br>
+            Les CSS signifie Cascading Style Sheet et cela est important, puisque cela indique qu'il agit en cascade (j'en dirais plus, plus tard).
+        </p>
+        <h4>Connecter HTML et CSS</h4>
+        <p>
+            Pour ajouter du CSS à une page HTML il faut d'abord créer un fichier CSS, par convention il s'appele "style.css", puis dans le head du HTML il faut ajouter :
+            <pre><code>
+                &lt;link rel="stylesheet" href="style.css"&gt;
+            </code></pre>
+            Et maintenant le CSS sera appliqué au HTML.
+        </p>
+        <h4>Les base</h4>
+        <p>
+            Pour appliquer un style CSS sur des élement HTML il faut pouvoir les sélectionner, il y a différents moyens de le faire : <br>
+            Dans le CSS sélectionner tout les element d'un balise (tout les &lt;img/&gt; ou tout le &lt;p&gt;&lt;/p&gt;) simplement en écrivant le nom de la balise <br>
+            ⚠️Sans les "&lt;" ou "&gt;"⚠️ Exemple : 
+            <pre><code>
+                /*Code CSS*/
+                img{
+                    /*Des propiétés*/
+                }
+            </code></pre>
+            Ensuite il est possible d'utiliser l'option class dans le HTML pour donner une classe à l'élement HTML. Class peut être utilisé sur différent élement HTML. <br>
+            Dans le CSS il faut faire . et le nom de la classe. <br>
+            Exemple : <br>
+            <pre><code>
+                &lt;!-- HTML --&gt;
+                &lt;body&gt;
+                    &lt;p class="text"&gt;Du texte&lt;/p&gt;
+                &lt;/body&gt;
+            </code></pre>
+            <pre><code>
+                /* CSS */
+                .text{
+                    /*Des propiétés*/
+                }
+            </code></pre>
+            Après il y a les id. Il sont pareils aux class <br>
+            ⚠️Mais dans le CSS il faut utiliser "#", de plus il peuvent être appliqué à un seul élement HTML⚠️<br>
+            Exemple : <br>
+            <pre><code>
+                &lt;!-- HTML --&gt;
+                &lt;body&gt;
+                    &lt;p id="text"&gt;Du texte&lt;/p&gt;
+                &lt;/body&gt;
+            </code></pre>
+            <pre><code>
+                /* CSS */
+                #text{
+                    /*Des propiétés*/
+                }
+            </code></pre>
+            Finalement il y a les style directement appliqué aux élements HTML, ce n'est pas recommendé de le faire mais c'est possible. <br>
+            Exemple : <br>
+            <pre><code>
+                &lt;!-- HTML --&gt;
+                &lt;body&gt;
+                    &lt;p style="/*Du CSS*/"&gt;Du texte&lt;/p&gt;
+                &lt;/body&gt;
+            </code></pre>
+            Tout les élements de style suive la même application d'abord les élement géneraux sont appliqué puis les classe, ensuite les id et finalement les style dans le HTML, donc <br>
+            <pre><code>p>.text>#text>style="/*CSS*/"</code></pre>
+        </p>
+        <h4>Attributs de base</h4>
+        <p>Maintenant que vous savez sélectionner des élements HTML pour les manipuler en CSS, il faut savoir comment les manipuler !</p> <br>
+        <h4>Manipulation de texte</h4>
+        <p>
+            Il y a différents moyens de manipuler du texte, il y a d'abord la couleur <br>
+            Exemple : <br>
+            <pre><code>
+                .texte{
+                    color : red;
+                }
+            </code></pre>
+            Comme vous le voyez tout les attributs CSS sont entre accolades, puis suis le nom de l'attribut, deux-points et sa valeur, toujours succéder d'un point virgule. <br>
+            Après la couleur il y a les polices :
+            d'abord il y a font-size qui peut prendre différentes valeurs. <br>
+            Cela permet d'attribuer une taille au texte : la valeur peut être en pixel(px), en rem ou em(des valeurs arbitraires), en vh(view height, de 0 a 100, 100 est la hauteur de la page), ou en vw(comme le vh mais pour la largeur). <br>
+            Ensuite pour le texte il y a font-family qui permet d'utiliser une autre police, celle de base sont : 'Impact', 'Arial', 'Times New Roman' et 'Helvetica'. <br>
+            Finalement pour le texte il y a le text-decoration qui permet d'ajouter des élements comme un soulignement. Les valeurs possible sont 'underline', 'overline', 'wavy' et 'dotted'. <br>
+            ⚠️Pour le soulignement il est possible de cumuler différentes valeurs⚠️ <br>
+            Exemple : <br>
+            <pre><code>
+                .texte{
+                    color : #000; /*noir, c'est une valeur héxadécimal que vous pouvez obtenir sur un color picker*/
+                    font-size : 2rem; /*taille de police*/
+                    font-family : 'arial'; /*type de police*/
+                    text-decoration : underline wavy; /*souligné et en forme de vague*/
+                }
+            </code></pre>
+        </p>
+        <h4>Background</h4>
+        <p>
+            Maintenant que vous savez manipuler du texte ajoutons un arière plan. <br>
+            Ici nous verrons uniquement deux arrière plan, le fond uni :
+            <pre><code>
+                .texte{
+                    background-color : rgb(0,0, 255); /*bleu, c'est une valeur r g b que vous pouvez aussi obtenir sur un color picker*/
+                }
+            </code></pre>
+            Et le fond d'image : <br>
+            <pre><code>
+                .texte{
+                    background-image : url('le lien de l'image'); /*le lien est le même que pour une image en HTML*/
+                }
+            </code></pre>
+        </p>
+        <h4>Border</h4>
+        <p>
+            La dernière chose que nous verrons ici est la bordure, attribut border qui prend trois valeur : une taille (avec les même unité que la font-size), un type, et une couleur. <br>
+            ⚠️Vous devez toujours suivre ce patterne ou la bordure peut mal s'afficher⚠️ <br>
+            Il y a 4 valeur pour le type de bordure : 'solid', 'dashed', 'dotted' et 'outset'. <br>
+            Exemple : <br>
+            <pre><code>
+                .text{
+                    border : 0.1rem solid purple; /*Une bordure de 0.1rem continue et violette*/
+                }
+            </code></pre>
+        </p>
+        <h2>Conclusion</h2>
+        <p>
+            Merci d'avoir lu jusqu'ici, et j'éspère avoir pu aider. Si vous avez des recomendation ou demande faite le moi savoir, de même s'il y a des erreurs. <br>
+            À bientôt !
+        </p>
+    </main>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

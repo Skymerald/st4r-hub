@@ -1,0 +1,19 @@
+.load-screen{
+    width: 100vw;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+
+    background-color: #00000060;
+
+    z-index: 15;
+}
+.show-load{
+    display: flex;
+}
+.hide-load{
+    display: none;
+}

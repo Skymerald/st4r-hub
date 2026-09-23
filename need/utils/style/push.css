@@ -1,0 +1,77 @@
+.push-wrapper{
+    position: fixed;
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+
+    bottom: 1rem;
+    right: 1rem;
+
+    width: 25vw;
+
+    transition: height 0.3s ease;
+}
+.push{
+    position: relative;
+    right : -25vw;
+
+    width: clamp(200px, 20vw, 500px);
+
+    background: color(srgb 1 1 1 / 0.4);
+    border: solid #FFF 0.15rem;
+    border-radius: 1rem;
+
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    text-align: center;
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.push i{
+    font-size: 2rem;
+    justify-self: right;
+}
+
+.push-error{
+    background-color: color(from var(--strawberry-red) srgb r g b / 0.4);
+    border-color: var(--strawberry-red);
+    color: var(--strawberry-red);
+}
+.push-warning{
+    background-color: color(from var(--bright-lemon) srgb r g b / 0.4);
+    border-color: var(--bright-lemon);
+    color: var(--bright-lemon);
+}
+.push-success{
+    background-color: color(from var(--bright-fern) srgb r g b / 0.4);
+    border-color: var(--bright-fern);
+    color: var(--bright-fern);
+}
+
+.push-open{
+    animation: 0.6s ease 0s push-open forwards;
+}
+.push-close{
+    animation: 0.6s ease 0s push-close forwards;
+}
+@keyframes push-open{
+    from{
+        right: -25vw;
+    }
+    to{
+        right: 0vw;
+    }
+}
+@keyframes push-close{
+    from{
+        right: 0vw;
+    }
+    to{
+        right: -25vw;
+    }
+}

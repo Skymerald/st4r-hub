@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a1bb3c16d0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="utils/push.js" defer></script>
+    <script src="utils/load_screen.js" defer></script>
+    <script src="utils/popup.js" defer></script>
+    <script src="utils/base64.js" defer></script>
+
+    <title>NeED • Connexion</title>
+</head>
+<body>
+    <form class="panel">
+        <h1>Connexion</h1>
+        <div class="icon-input">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Identifiant" id="user" autofocus />
+        </div>
+        <div class="icon-input">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" placeholder="Mot de passe" id="password" autofocus />
+        </div>
+        <button type="submit" autofocus>Se connecter</button>
+    </form>
+    <script src="login.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+body{
+    display: flex; 
+    gap: 1rem;
+
+    font-family: 'Ubuntu';
+    font-weight: 400;
+}
+.average-panel{
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    width: 100%;
+
+    gap: 1em;
+}
+.chart-section{
+    display: flex;
+
+    flex-direction: column;
+}
+.subjects-container{
+    width: max(1000px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    justify-content: center;
+}
+.subject-panel{
+    display: flex;
+
+    height : clamp(100px, 13vh, 300px);
+    width : clamp(100px, 13vh, 300px);
+}
+.stats{
+    display: flex;
+    flex-direction: row;
+}
+h1{
+    font-size: 2.5em;
+}
+h4{
+font-size: 1.7em;
+}
+h5{
+font-size: 1.3em;
+}
+h6{
+font-size: 0.8em;
+}
+
+@media only screen and (max-width: 768px) {
+    body{
+        display: flex;
+
+        flex-direction: column; 
+        overflow-x: hidden;
+        
+        align-items: center;
+        justify-content: flex-start;
+
+        background: var(--mauve);
+    }
+    .main-panel{
+        justify-content: center;
+
+        width: 100vw;
+        height: 20vh;
+
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+    .average-panel{
+        justify-content: center;
+        gap: 8vw;
+        margin: 3vw;
+    }
+    .chart-section{ 
+        display: none; 
+    }
+    .subjects-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        align-items: center;
+        width: fit-content;
+
+        height: 80vh;
+        padding : 2px;
+        padding-bottom: 8em;
+
+        overflow: scroll;
+        flex-wrap: nowrap;
+    }
+    .subject-panel{
+        flex-direction: row;
+
+        color: black;
+
+        background: none;
+        border: 0.05rem solid black;
+        box-shadow: none;
+
+        height : fit-content;
+
+        width : clamp(250px, 70vw, 1500px);
+
+        display: grid;
+        grid-template-columns: min-content auto min-content;
+        align-items: center;
+    }
+    .subject-average{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .stats{
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        gap: 2vh;
+    }
+    .stats>h6{
+        display: flex;
+    }
+    h4{
+        font-size: 1.2em;
+    }
+    h5{
+        font-size: 1em;
+    }
+    h6{
+        font-size: 0.7em;
+    }
+}

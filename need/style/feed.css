@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+}
+.feed-container{
+    display: flex;
+    flex-direction: column;
+
+    gap: 2vh;
+
+    height: 100vh;
+
+    overflow: scroll;
+
+    padding: 10px;
+    padding-top: 1em;
+    padding-bottom: 8em;
+}
+.grade-panel{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+
+    width: clamp(200px, 80vw, 1600px);
+}
+.grade-name{
+    font-size: 1.2em;
+}
+.stats{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 0.5em;
+
+    font-size: 1em;
+}

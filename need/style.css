@@ -1,0 +1,184 @@
+:root{
+    --transparent : rgba(0,0,0,0);
+
+    --dark-amethyst: #156554;
+    --dark-amethyst-2: #20977E;
+    --indigo-ink: #2BCAA7;
+    --indigo-velvet: #31D4B2;
+    --royal-violet: #46D8B8;
+    --lavender-purple: #57DBBF;
+    --mauve-magic: #68DFC5;
+    --mauve: #fff;
+
+    --strawberry-red: #ef233c;
+    --bright-lemon: #f4e409;
+    --bright-fern: #38b000;
+}
+*{
+    padding : 0;
+    margin : 0;
+}
+
+/* GLOBAL STYLE : applied to all the element */
+body{
+    font-family : "Ubuntu", Arial;
+    color : var(--mauve);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width : 100vw;
+    height : 100vh;
+
+    background: linear-gradient(0.10turn, var(--dark-amethyst), var(--indigo-ink));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+button{
+    background: none;
+
+    outline: none;
+    border: solid var(--mauve) 0.1rem;
+    border-radius: 0.4rem;
+
+    color: var(--mauve);
+
+    padding : 0.4rem;
+
+    transition: all 0.2s;
+}
+button:hover{
+    cursor: pointer;
+
+    background-color: var(--lavender-purple);   
+}
+
+input{
+    outline: none;
+    border: solid var(--main-color) 0.1rem;
+    border-radius: 0.5rem;
+
+    padding: 0.5rem;
+
+    width : 100%;
+}
+
+/* GLOBAL CLASS : most common classes */
+.panel{
+    display : flex;
+    flex-direction : column;
+    
+    align-items : center;
+    gap : 1.5rem;
+
+    width : fit-content;
+    padding : 1.5rem;
+
+    border : solid var(--lavender-purple) 0.1rem;
+    border-radius: 1rem;
+
+    background-color: var(--indigo-velvet);
+
+    box-shadow: 0.2rem 0.2rem 0.7rem var(--dark-amethyst), -0.05rem -0.05rem 0.3rem var(--royal-violet);
+}
+
+
+input{
+    border : var(--mauve) solid 0.1rem;
+
+    background-color: var(--transparent);
+
+    color : var(--mauve);
+}
+input::placeholder{
+    color : var(--mauve);
+}
+
+.icon-input{
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+.icon-input i {
+    z-index: 1;
+
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--mauve);
+}
+.icon-input input{
+    padding-left: 1.75rem;
+}
+
+/* SPECIFIC CLASS : class for specific files or element */
+/* QCM */
+.qcm{
+    display: flex;
+    flex-direction: column;
+
+    gap: 1vh;
+}
+.question{
+    font-size: 1.2rem;
+}
+.answers{
+    display: flex;
+    flex-direction: column;
+
+    gap: 1vh;
+
+    height: clamp(200px, 40vh, 600px);
+
+    overflow-y: scroll;
+}
+/* NAVBAR */
+.nav-panel{
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5em;
+
+    right: 1rem;
+}
+.nav-panel>button{
+    font-size: 1.5rem;
+
+    height: 2.6rem;
+    width: 2.6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+.separator{
+    width: 100%; 
+    border-top: solid 0.01em #fff;
+}
+@media only screen and (max-width: 768px) {
+    .nav-panel{
+        bottom: 1rem;
+        flex-direction: row;
+        justify-content: center;
+
+        right: auto;
+    }
+    .separator{
+        width: 0.01em;
+        height: 2.5em;
+        border-left: solid 0.01em #fff;
+    }
+}
